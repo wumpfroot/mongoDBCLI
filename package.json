@@ -1,0 +1,24 @@
+{
+  "name": "mongodbcli",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wumpfroot/mongoDBCLI.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/wumpfroot/mongoDBCLI/issues"
+  },
+  "homepage": "https://github.com/wumpfroot/mongoDBCLI#readme",
+  "description": "",
+  "dependencies": {
+    "dotenv": "^16.0.1",
+    "mongodb": "^4.6.0"
+  }
+}
