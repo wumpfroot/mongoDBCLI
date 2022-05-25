@@ -13,10 +13,12 @@ exports.listMovies = async (collection) => {
     console.log(movies)
 }
 
-// exports.updateMovie = async (movieObj, collection) => {
-//     const editMovie = await collection.updateOne({ title: movieObj.title} );
-//     console.log(editMovie)
-// }
+exports.updateMovie = async (movieObj, collection) => {
+    const options = { upsert: true }
+    const updateDoc = {$set: {director: movieObj.director}}
+    const editMovie = await collection.updateOne({ title: movieObj.title}, updateDoc, options);
+    console.log(editMovie)
+}
 
 exports.deleteMovie = async (movieObj, collection) => {
     const delMovie = await collection.deleteOne({ title: movieObj.title });

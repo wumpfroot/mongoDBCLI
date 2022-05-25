@@ -10,7 +10,7 @@ const app = async (yargsObj) => {
             await addMovie({ title: yargsObj.title, actor: yargsObj.actor, year: yargsObj.year }, collection);
         }else if (yargsObj.update) {
             //update movie from mongodb
-            await updateMovie({ title: yargsObj.title}, {$set: {director: yargsObj.director}}, collection);
+            await updateMovie({ title: yargsObj.title}, collection);
         }else if (yargsObj.delete) {
             //delete movie from mongodb
             await deleteMovie({title: yargsObj.title}, collection);
