@@ -1,6 +1,6 @@
 const yargs = require("yargs");
 const { client, connection } = require("./db/connection");
-const { addMovie, listMovies, deleteMovie, updateMovie } = require("./utils");
+const { addMovie, listMovies, deleteMovie, updateMovie} = require("./utils");
 
 const app = async (yargsObj) => {
     const collection = await connection();
@@ -10,7 +10,7 @@ const app = async (yargsObj) => {
             await addMovie({ title: yargsObj.title, actor: yargsObj.actor, year: yargsObj.year }, collection);
         }else if (yargsObj.update) {
             //update movie from mongodb
-            await updateMovie({ title: yargsObj.title}, collection);
+            await updateMovie({ title: yargsObj.title}, {[yargsObj.keyName]: yargsObj.keyVal}, collection);
         }else if (yargsObj.delete) {
             //delete movie from mongodb
             await deleteMovie({title: yargsObj.title}, collection);
